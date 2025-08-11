@@ -19,5 +19,6 @@ export default {
     });
 
     return await empleadoRepository.create({ ...empleadoNuevo });
+
   }
 }
