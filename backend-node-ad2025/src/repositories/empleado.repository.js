@@ -1,6 +1,6 @@
 import { db } from '../config/firebase.js';
 
-const COLLECTION = 'empleados';
+const COLLECTION = 'usuarios';
 
 export default {
   async getAll() {
@@ -35,8 +35,7 @@ export default {
   },
 
   async findByUsuario(usuario) {
-    const empleado = await db.collection(COLLECTION)
-                            .where('usuario', '==', usuario).get();
-    return empleado.empty ? null : empleado.docs[0].data;
+    const empleado = await db.collection(COLLECTION).where('usuario', '==', usuario).get();
+    return empleado.empty ? null : empleado.docs[0].data();
   }
 }
