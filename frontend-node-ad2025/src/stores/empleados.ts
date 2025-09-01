@@ -7,7 +7,7 @@ import EmpleadosPage from "@/pages/modules/EmpleadosPage.vue";
 
 
 export interface EmpleadoInterface {
-  id: string,
+  id?: string,
   nombre: string,
   apaterno: string,
   amaterno: string,

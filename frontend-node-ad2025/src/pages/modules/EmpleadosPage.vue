@@ -76,7 +76,7 @@ const onSaved = async() => {
     </v-card>
 
     <!-- Componente para mostrar el modal -->
-    <EmpleadoForm v-model="showForm" :empleado="selected" @saved="onSaved" v-on:close-dialog="closeChild"/>
+    <EmpleadoForm v-model="showForm" :empleado="selected" @saved="onSaved"/>
 
     <!-- Dialogo para mostrar el anuncio para borrar usuario -->
     <v-dialog v-model="openDelete" max-width="600px" persistent>
