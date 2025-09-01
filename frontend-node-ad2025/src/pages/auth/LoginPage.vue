@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AuthLayout from '@/layouts/AuthLayout.vue';
+// defineComponent es cuando no se usa setup
 import { defineComponent, ref } from 'vue';
 import { mapActions } from 'pinia';
 import { useAuthStore } from '@/stores/auth';
@@ -7,7 +8,7 @@ import { useAuthStore } from '@/stores/auth';
 const { login } = useAuthStore();
 const user = ref({ usuario: '', password: '' });
 const submit = () => {
-  login({usuario: user.value.usuario, password: user.value.password})
+  login({usuario: user.value.usuario, password: user.value.password});
 }
 
 </script>
@@ -32,7 +33,7 @@ const submit = () => {
             label="Password"
             type="password"
           />
-          <v-btn variant="text" block @click="submit">
+          <v-btn block @click="submit" color="secondary">
             Login
           </v-btn>
         </v-form>

@@ -19,7 +19,7 @@ export default {
     try {
       // revisar si es params o body
       const { id } = req.params;
-      const result = await empleadoServices.updateEmpleado(id);
+      const result = await empleadoServices.updateEmpleado(id, req.body);
       res.status(200).json({
         message: 'success',
         result
