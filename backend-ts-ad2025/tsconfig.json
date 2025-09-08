@@ -6,14 +6,15 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "es2020",
     "target": "es2020",
-    "types": [ "node", ],
+    "module": "commonjs",
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
     // and npm install -D @types/node
-    "allowSyntheticDefaultImports":true,
+    "types": [ "node", ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
 
     // Other Outputs
     "sourceMap": true,
@@ -34,11 +35,13 @@
 
     // Recommended Options
     "strict": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
     "moduleResolution": "node"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

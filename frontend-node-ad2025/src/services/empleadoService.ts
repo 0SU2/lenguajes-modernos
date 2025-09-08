@@ -20,7 +20,7 @@ export const getEmpleados = async() => {
 }
 
 export const createEmpleado = async(data:object) => {
-  return api.put('/create', data);
+  return api.post('/create', data);
 }
 
 export const updateEmpleado = async(id:any, data:object) => {

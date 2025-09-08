@@ -34,7 +34,7 @@ export const useEmpleadoStore = defineStore('empleado', {
     async fetchEmpleados() {
       this.loading = true;
       const {data} = await getEmpleados();
-      this.$state.empleados = data.result;
+      this.$state.empleados = data;
       this.loading = false;
     },
     async addEmpleado(empleado: object) {

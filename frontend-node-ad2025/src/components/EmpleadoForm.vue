@@ -24,9 +24,9 @@ watch(() => props.modelValue, (val) => {
 
 const save = async() => {
   if(props.empleado?.id) {
-    await updateEmpleado(props.empleado.id, { nombre: user.value.nombre, apaterno: user.value.apaterno, amaterno: user.value.amaterno, direccion: user.value.direccion, telefono: user.value.telefono, ciudad: user.value.ciudad, estado: user.value.estado, email: user.value.email, usuario: user.value.usuario, password: user.value.password });
+    await updateEmpleado(props.empleado?.id, { nombre: user.value.nombre, apaterno: user.value.apaterno, amaterno: user.value.amaterno, direccion: user.value.direccion, telefono: user.value.telefono, ciudad: user.value.ciudad, estado: user.value.estado, email: user.value.email, usuario: user.value.usuario, password: user.value.password });
   } else {
-    await addEmpleado(user.value);
+    await addEmpleado({ nombre: user.value.nombre, apaterno: user.value.apaterno, amaterno: user.value.amaterno, direccion: user.value.direccion, telefono: user.value.telefono, ciudad: user.value.ciudad, estado: user.value.estado, email: user.value.email, usuario: user.value.usuario, password: user.value.password });
   }
   emit('update:modelValue', false);
   emit('saved');

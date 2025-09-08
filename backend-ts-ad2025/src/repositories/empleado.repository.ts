@@ -5,7 +5,8 @@ const collection = db.collection("empleado-ts");
 
 export default class EmpleadoRepository {
   async create (empleado: EmpleadoModel): Promise<string> {
-    const empleadoCreate = await collection.add({ ...empleado });
+    const { id, ...empleadoData } = empleado
+    const empleadoCreate = await collection.add(empleadoData);
     return empleadoCreate.id
   }
 

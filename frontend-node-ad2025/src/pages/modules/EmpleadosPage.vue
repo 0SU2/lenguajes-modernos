@@ -29,8 +29,8 @@ const edit = (item:any):void => {
   showForm.value = true
 }
 
-const remove = (item:any, data:any):void => {
-  selected.value = {...data};
+const remove = (item:any):void => {
+  // selected.value = {...data};
   openDelete.value = false;
 }
 
@@ -41,7 +41,7 @@ const openAddModal = ():void => {
 
 const onSaved = async() => {
   showForm.value = false;
-  // await fetchEmpleados();
+  await fetchEmpleados();
 }
 
 </script>

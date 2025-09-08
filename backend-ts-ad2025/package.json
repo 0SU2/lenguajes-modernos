@@ -2,11 +2,10 @@
   "name": "backend-ts-ad2025",
   "version": "1.0.0",
   "main": "./dist/main.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/tsc --build && ./node_modules/.bin/nodemon ./dist/main.js",
-    "dev": "./node_modules/.bin/tsc watch ./src/main.ts"
+    "dev": "./node_modules/.bin/nodemon ./src/main.ts"
   },
   "keywords": [],
   "author": "",
