@@ -18,9 +18,9 @@ export default function Login() {
     e.preventDefault();
     setError(undefined);
     setLoading(true);
-    navigate('/dashboard');
     try {
       await login(usuario, password);
+      navigate('/dashboard');
     } catch (error) {
       setError('Error de autenticacion');
     } finally {
