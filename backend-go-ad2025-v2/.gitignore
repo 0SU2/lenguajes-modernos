@@ -1,0 +1,8 @@
+bin/
+*.exe
+*.out
+*.test
+
+*.json
+
+.DS_Store
