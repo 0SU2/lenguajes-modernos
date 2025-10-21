@@ -1,7 +1,7 @@
 **/.env
 **/package-lock.json
 **/account-key.json
-**/virtual-python
-*/**/__pycache
+**/virtual-python/
+**/__pycache__/
 **/virtual-python/**
 **/*.zip
