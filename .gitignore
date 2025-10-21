@@ -2,9 +2,6 @@
 **/package-lock.json
 **/account-key.json
 **/virtual-python
-**/__pycache
-**/**/__pycache
-**/__pycache/**
-**/**/__pycache/**
+*/**/__pycache
 **/virtual-python/**
 **/*.zip
