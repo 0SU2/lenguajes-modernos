@@ -1,0 +1,6 @@
+**/.env
+**/package-lock.json
+**/account-key.json
+**/virtual-python
+**/virtual-python/**
+**/*.zip
