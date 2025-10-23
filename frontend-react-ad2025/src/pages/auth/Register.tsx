@@ -43,7 +43,7 @@ export default function Register() {
 
   const onChange = (k: keyof FormState) => (e:React.ChangeEvent<HTMLInputElement>) => setForm((s) => ({ ...s, [k]: e.target.value}));
 
-  const onSubmit = async (e: React.ChangeEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(undefined);
     const parse = schema.safeParse(form);
@@ -67,17 +67,27 @@ export default function Register() {
   return (
     <div>
       <h1 className="text-2xl font-semibold text-white mb-2">Crear Cuenta</h1>
-      <form onSubmit={onSubmit} className="grid grid-cols-1 gap-3">
-        <Input label="Nombre" value={form.nombre} onChange={onChange('nombre')} required />
-        <Input label="A. Paterno" value={form.apaterno} onChange={onChange('apaterno')} required />
-        <Input label="A. Materno" value={form.amaterno} onChange={onChange('amaterno')} />
-        <Input label="Direccion" value={form.direccion} onChange={onChange('direccion')} />
-        <Input label="Telefono" value={form.telefono} onChange={onChange('telefono')} />
-        <Input label="Ciudad" value={form.ciudad} onChange={onChange('ciudad')} />
-        <Input label="Estado" value={form.estado} onChange={onChange('estado')} />
-        <Input label="Usuario" value={form.usuario} onChange={onChange('usuario')} required />
-        <Input label="Password" value={form.password} onChange={onChange('password')} required />
-        <Input label="Rol" value={form.rol} onChange={onChange('rol')} required />
+      <form onSubmit={onSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <Input label="Nombre" value={form.nombre} onChange={onChange('nombre')} required />
+          <Input label="A. Paterno" value={form.apaterno} onChange={onChange('apaterno')} required />
+          <Input label="A. Materno" value={form.amaterno} onChange={onChange('amaterno')} />
+        </div>
+        <div className="grid grid-cols-1">
+          <Input label="Direccion" value={form.direccion} onChange={onChange('direccion')} />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <Input label="Telefono" value={form.telefono} onChange={onChange('telefono')} />
+          <Input label="Ciudad" value={form.ciudad} onChange={onChange('ciudad')} />
+          <Input label="Estado" value={form.estado} onChange={onChange('estado')} />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <Input label="Usuario" value={form.usuario} onChange={onChange('usuario')} required />
+          <Input label="Password" value={form.password} onChange={onChange('password')} required />
+          <Input label="Rol" value={form.rol} onChange={onChange('rol')} required />
+        </div>
         { error ? <FormError message={error}/> : <></> }
         <Button type="submit" loading={loading} className="w-full text-orange-600 font-semibold">Registrar Usuario</Button>
       </form>
